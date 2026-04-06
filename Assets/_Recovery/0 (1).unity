@@ -1713,6 +1713,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::player_stats
   score: 0
+  Box:
+    score: 0
 --- !u!1 &1300632457
 GameObject:
   m_ObjectHideFlags: 0
