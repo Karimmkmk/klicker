@@ -15,6 +15,6 @@ public class text : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       seeButton.text = "score: " + explorerMisha.score.ToString(); 
+       seeButton.text = "score: " + explorerMisha.Box.score.ToString(); 
     }
 }
