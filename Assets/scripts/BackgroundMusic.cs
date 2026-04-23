@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BackgroundMusic : MonoBehaviour
 {
-    [Header("Audio Settings")]
+    [Header("Audio Settings:")]
     [SerializeField] private AudioClip musicClip;
     [SerializeField] [Range(0f, 1f)] private float volume = 0.5f;
     [SerializeField] private bool playOnStart = true;

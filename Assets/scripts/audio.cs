@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button), typeof(AudioSource))]
-public class SimpleButtonSound : MonoBehaviour
+public class audio : MonoBehaviour
 {
     private Button button;
     private AudioSource audioSource;
