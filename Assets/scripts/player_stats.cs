@@ -1,13 +1,16 @@
 using UnityEngine;
 using System.IO;
+using TMPro;
 
 public class player_stats : MonoBehaviour
 {
+    public TextMeshProUGUI peredacha;
     public save Box = new save();
     void save_game()
     {
         string json_stroka = JsonUtility.ToJson(Box);
         File.WriteAllText(Application.persistentDataPath + "/save.json", json_stroka);
+        peredacha.text += $"\ngame save {(Application.persistentDataPath + "/save.json")}";
 
     }
     void load_game()
@@ -16,6 +19,7 @@ public class player_stats : MonoBehaviour
         {
             string vozvrat = File.ReadAllText(Application.persistentDataPath + "/save.json");
         Box = JsonUtility.FromJson<save>(vozvrat);
+        peredacha.text += $"\ngame load {(Application.persistentDataPath + "/save.json")}";
         }
         else
         {
@@ -29,6 +33,7 @@ public class player_stats : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        peredacha.text += "\nbegining load";
         load_game();
         print(Application.persistentDataPath + "/save.json");
     }

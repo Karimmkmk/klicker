@@ -1,15 +1,20 @@
+using System;
 using TMPro;
 using UnityEngine;
-[System.Serializable]public class DataUpgrade
+[System.Serializable]public abstract class DataUpgrade
 {
    public uint kolichestvo;
+}
+[System.Serializable]public class DataUpgrade_default : DataUpgrade
+{
+    
 }
 public abstract class AbstractUpgrade : MonoBehaviour
 {
     protected TextMeshProUGUI Title;
     protected TextMeshProUGUI Count;
     protected TextMeshProUGUI price;
-    [SerializeField]protected DataUpgrade data = new DataUpgrade();
+    [SerializeField]protected DataUpgrade data = new DataUpgrade_default();
     [SerializeField]protected uint basePrice;
     [SerializeField]protected float multiplier = 1;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -25,6 +30,11 @@ public abstract class AbstractUpgrade : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        price.text = (multiplier * basePrice * data.kolichestvo).ToString();
+        uint bla = ToPrice();
+        price.text = bla.ToString();
+    }
+    public uint ToPrice()
+    {
+      return(uint)(multiplier * (basePrice * (data.kolichestvo + 1)));
     }
 }
