@@ -43,6 +43,10 @@ public class player_stats : MonoBehaviour
     {
         
     }
+    void OnApplicationQuit()
+    {
+        save_game();
+    }
 }
 [System.Serializable]
 public class save
