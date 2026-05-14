@@ -53,4 +53,5 @@ public class save
 {
     public ulong score;
     public uint dialogue;
+    public int atnosh;
 }

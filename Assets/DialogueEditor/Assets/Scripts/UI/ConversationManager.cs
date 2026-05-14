@@ -700,7 +700,7 @@ namespace DialogueEditor
                 }
 
             }
-            SetSelectedOption(0);
+            //SetSelectedOption(0);
 
             // Set the button sprite and alpha
             for (int i = 0; i < m_uiOptions.Count; i++)

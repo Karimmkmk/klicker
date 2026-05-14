@@ -17,10 +17,13 @@ public class diomanager : MonoBehaviour
     {
         
     }
-    void dio1()
+    public void dio1()
     {
+        if (player_Stats.Box.dialogue == 0)
+        { 
         NPCConversation npc = boxbox.GetChild(0).GetComponent<NPCConversation>();
         explorer.StartConversation(npc);
         player_Stats.Box.dialogue = 1;
+        }
     }
 }
