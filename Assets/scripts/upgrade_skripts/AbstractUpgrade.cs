@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 [System.Serializable]public abstract class DataUpgrade
 {
    public uint kolichestvo;
@@ -24,8 +25,14 @@ public abstract class AbstractUpgrade : MonoBehaviour
         price = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         // TODO: вытаскиваем текст из дочернего объекта.
         Start02();
+        linkbutton();
     }
     protected abstract void Start02();
+    private void linkbutton()
+    {
+        Button boxbutton = GetComponent<Button>();
+        boxbutton.onClick.AddListener(click_action);
+    }
 
     // Update is called once per frame
     void Update()
@@ -37,4 +44,5 @@ public abstract class AbstractUpgrade : MonoBehaviour
     {
       return(uint)(multiplier * (basePrice * (data.kolichestvo + 1)));
     }
+    public abstract void click_action();
 }

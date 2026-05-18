@@ -8,5 +8,9 @@ public class clickUpgrate : AbstractUpgrade
         Title.text = "2 в 1";
         basePrice = 1000;
     }
-
+    public override void click_action()
+    {
+        
+    }
+    
 }
