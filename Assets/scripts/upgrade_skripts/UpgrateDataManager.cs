@@ -8,6 +8,15 @@ public class UpgrateDataManager : MonoBehaviour
     {
         clovar.Add(key, infa);
     }
+    public DataUpgrade GetData(string key)
+    {
+        DataUpgrade vremas;
+        if (clovar.TryGetValue(key, out vremas))
+        {
+            return vremas;
+        }
+        return null;
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

@@ -10,7 +10,14 @@ public class clickUpgrate : AbstractUpgrade
     }
     public override void click_action()
     {
-        
+        print("starting");
+        if (exemp.Box.score < ToPrice())
+        {
+            return;
+        }
+        exemp.Box.score -= ToPrice();
+        data.kolichestvo += 1;
+        print("upppy!");
     }
     
 }

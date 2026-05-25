@@ -12,6 +12,8 @@ using UnityEngine.UI;
 }
 public abstract class AbstractUpgrade : MonoBehaviour
 {
+    protected UpgrateDataManager manager;
+    public player_stats exemp;
     protected TextMeshProUGUI Title;
     protected TextMeshProUGUI Count;
     protected TextMeshProUGUI price;
@@ -21,6 +23,8 @@ public abstract class AbstractUpgrade : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        manager = GameObject.Find("Canvas").GetComponent<UpgrateDataManager>();
+        exemp = GameObject.Find("Canvas").GetComponent<player_stats>();
         Title = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         price = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         // TODO: вытаскиваем текст из дочернего объекта.
