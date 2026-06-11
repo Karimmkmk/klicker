@@ -27,6 +27,8 @@ public class UpgrateDataManager : MonoBehaviour
     void Start()
     {
         exemp = GameObject.Find("Canvas").GetComponent<player_stats>();
+        exemp.PostLoad += ConvertorLC;
+        exemp.PreSave += ConvertorCL;
     }
 
     // Update is called once per frame

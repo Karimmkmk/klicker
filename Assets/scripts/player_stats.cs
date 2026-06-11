@@ -13,9 +13,10 @@ public class player_stats : MonoBehaviour
     public event MyD PreSave;
     void save_game()
     {
-        
+        PreSave?.Invoke();
         string json_stroka = JsonUtility.ToJson(Box);
         File.WriteAllText(Application.persistentDataPath + "/save.json", json_stroka);
+        
 
     }
     void load_game()
@@ -39,6 +40,7 @@ public class player_stats : MonoBehaviour
     void Start()
     {
         load_game();
+        print(Application.persistentDataPath + "/save.json");
     }
 
     // Update is called once per frame
@@ -55,7 +57,7 @@ public class player_stats : MonoBehaviour
 public class save
 {
     
-    public List<KeyValuePair<string, DataUpgrade>> clovolist;
+    public List<KeyValuePair<string, DataUpgrade>> clovolist = new ();
     public ulong score;
     public uint dialogue;
     public int atnosh;
