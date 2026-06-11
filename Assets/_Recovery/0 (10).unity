@@ -2659,10 +2659,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1023540076}
-  - {fileID: 949399249}
   - {fileID: 2142114155}
   - {fileID: 1830255192}
   - {fileID: 1036431312}
+  - {fileID: 949399249}
   - {fileID: 1343114372}
   - {fileID: 1592627359}
   - {fileID: 1271226693}
@@ -2701,6 +2701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8b86bc4085a19245aa67619435f7d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpgrateDataManager
+  exemp: {fileID: 0}
 --- !u!114 &1247413216
 MonoBehaviour:
   m_ObjectHideFlags: 0

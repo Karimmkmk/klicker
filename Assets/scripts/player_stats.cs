@@ -1,12 +1,19 @@
-using UnityEngine;
+using NUnit.Framework;
+using System;
+using System.Collections.Generic;
 using System.IO;
 using TMPro;
+using UnityEngine;
 
 public class player_stats : MonoBehaviour
 {
     public save Box = new save();
+    public delegate void MyD();
+    public event MyD PostLoad;
+    public event MyD PreSave;
     void save_game()
     {
+        
         string json_stroka = JsonUtility.ToJson(Box);
         File.WriteAllText(Application.persistentDataPath + "/save.json", json_stroka);
 
@@ -22,6 +29,7 @@ public class player_stats : MonoBehaviour
         {
             save_game();
         }
+        PostLoad?.Invoke();
     }
     void OnDestroy()
     {
@@ -46,6 +54,8 @@ public class player_stats : MonoBehaviour
 [System.Serializable]
 public class save
 {
+    
+    public List<KeyValuePair<string, DataUpgrade>> clovolist;
     public ulong score;
     public uint dialogue;
     public int atnosh;

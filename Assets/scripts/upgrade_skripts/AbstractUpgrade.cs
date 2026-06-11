@@ -21,6 +21,10 @@ public abstract class AbstractUpgrade : MonoBehaviour
     [SerializeField]protected uint basePrice;
     [SerializeField]protected float multiplier = 1;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Regist()
+    {
+        manager.AddData(this.GetType().Name, data);
+    }
     void Start()
     {
         manager = GameObject.Find("Canvas").GetComponent<UpgrateDataManager>();
@@ -28,6 +32,7 @@ public abstract class AbstractUpgrade : MonoBehaviour
         Title = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         price = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         // TODO: вытаскиваем текст из дочернего объекта.
+        Regist();
         Start02();
         linkbutton();
     }
