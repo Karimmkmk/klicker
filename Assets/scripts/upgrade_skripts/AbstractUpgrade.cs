@@ -2,24 +2,26 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-[System.Serializable]public abstract class DataUpgrade
+[System.Serializable]
+public class DataUpgrade
 {
-   public uint kolichestvo;
+    public uint kolichestvo;
 }
-[System.Serializable]public class DataUpgrade_default : DataUpgrade
+[System.Serializable]
+public class DataUpgrade_default : DataUpgrade
 {
-    
+
 }
 public abstract class AbstractUpgrade : MonoBehaviour
 {
     protected UpgrateDataManager manager;
-    public player_stats exemp;
+    protected player_stats exemp;
     protected TextMeshProUGUI Title;
     protected TextMeshProUGUI Count;
     protected TextMeshProUGUI price;
-    [SerializeField]protected DataUpgrade data = new DataUpgrade_default();
-    [SerializeField]protected uint basePrice;
-    [SerializeField]protected float multiplier = 1;
+    [SerializeField] protected DataUpgrade data = new DataUpgrade_default();
+    [SerializeField] protected uint basePrice;
+    [SerializeField] protected float multiplier = 1;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Regist()
     {
@@ -40,7 +42,7 @@ public abstract class AbstractUpgrade : MonoBehaviour
     private void linkbutton()
     {
         Button boxbutton = GetComponent<Button>();
-        boxbutton.onClick.AddListener(click_action);
+        boxbutton.onClick.AddListener(CA_ative);
     }
 
     // Update is called once per frame
@@ -51,7 +53,17 @@ public abstract class AbstractUpgrade : MonoBehaviour
     }
     public uint ToPrice()
     {
-      return(uint)(multiplier * (basePrice * (data.kolichestvo + 1)));
+        return (uint)(multiplier * (basePrice * (data.kolichestvo + 1)));
     }
     public abstract void click_action();
+    private void CA_ative()
+    {
+        if (exemp.Box.score < ToPrice())
+        {
+            return;
+        }
+        exemp.Box.score -= ToPrice();
+        data.kolichestvo += 1;
+        click_action();
+    }
 }

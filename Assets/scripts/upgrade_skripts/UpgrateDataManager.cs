@@ -34,27 +34,27 @@ public class UpgrateDataManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void ConvertorCL()
     {
         exemp.Box.clovolist.Clear();
         foreach (KeyValuePair<string, DataUpgrade> aktyal in clovar)
         {
-            exemp.Box.clovolist.Add(aktyal);
+            exemp.Box.clovolist.Add(new DataUpgradePair(aktyal.Key, aktyal.Value));
         }
     }
     private void ConvertorLC()
     {
-        foreach (KeyValuePair<string, DataUpgrade> aktyal in exemp.Box.clovolist)
+        foreach (var aktyal in exemp.Box.clovolist)
         {
-            if (clovar.ContainsKey(aktyal.Key))
+            if (clovar.ContainsKey(aktyal._key))
             {
-                clovar[aktyal.Key] = aktyal.Value;
+                clovar[aktyal._key] = aktyal._dataUpgrade;
             }
             else
             {
-                AddData(aktyal.Key, aktyal.Value);
+                AddData(aktyal._key, aktyal._dataUpgrade);
             }
         }
     }

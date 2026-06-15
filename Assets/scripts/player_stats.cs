@@ -1,8 +1,5 @@
-using NUnit.Framework;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using TMPro;
 using UnityEngine;
 
 public class player_stats : MonoBehaviour
@@ -14,9 +11,9 @@ public class player_stats : MonoBehaviour
     void save_game()
     {
         PreSave?.Invoke();
-        string json_stroka = JsonUtility.ToJson(Box);
+        string json_stroka = JsonUtility.ToJson(Box, true);
         File.WriteAllText(Application.persistentDataPath + "/save.json", json_stroka);
-        
+
 
     }
     void load_game()
@@ -24,7 +21,7 @@ public class player_stats : MonoBehaviour
         if (File.Exists(Application.persistentDataPath + "/save.json"))
         {
             string vozvrat = File.ReadAllText(Application.persistentDataPath + "/save.json");
-        Box = JsonUtility.FromJson<save>(vozvrat);
+            Box = JsonUtility.FromJson<save>(vozvrat);
         }
         else
         {
@@ -46,7 +43,7 @@ public class player_stats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     void OnApplicationQuit()
     {
@@ -56,9 +53,21 @@ public class player_stats : MonoBehaviour
 [System.Serializable]
 public class save
 {
-    
-    public List<KeyValuePair<string, DataUpgrade>> clovolist = new ();
+    public List<DataUpgradePair> clovolist = new();
     public ulong score;
     public uint dialogue;
     public int atnosh;
+}
+
+[System.Serializable]
+public class DataUpgradePair
+{
+    public string _key;
+    public DataUpgrade _dataUpgrade;
+
+    public DataUpgradePair(string key, DataUpgrade dataUpgrade)
+    {
+        _key = key;
+        _dataUpgrade = dataUpgrade;
+    }
 }

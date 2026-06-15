@@ -691,11 +691,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1801175887977149870, guid: 69d1f04d6e69a66439a34f16cfedc8f3, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -7.804291
+      value: -7.8043
       objectReference: {fileID: 0}
     - target: {fileID: 1801175887977149870, guid: 69d1f04d6e69a66439a34f16cfedc8f3, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 3.5759277
+      value: 45.0172
       objectReference: {fileID: 0}
     - target: {fileID: 1801175887977149870, guid: 69d1f04d6e69a66439a34f16cfedc8f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -731,7 +731,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1801175887977149870, guid: 69d1f04d6e69a66439a34f16cfedc8f3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.2296753
+      value: -20.491
       objectReference: {fileID: 0}
     - target: {fileID: 1801175887977149870, guid: 69d1f04d6e69a66439a34f16cfedc8f3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -768,7 +768,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7718926094067601138, guid: 69d1f04d6e69a66439a34f16cfedc8f3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1356549020}
   m_SourcePrefab: {fileID: 100100000, guid: 69d1f04d6e69a66439a34f16cfedc8f3, type: 3}
 --- !u!1 &619394800
 GameObject:
@@ -1855,8 +1858,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1229622266}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.06287265}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2408,7 +2411,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50b89512a7722544fa5180d23c3d83c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::clickUpgrate
-  exemp: {fileID: 0}
+  data:
+    kolichestvo: 0
   basePrice: 1000
   multiplier: 1
 --- !u!224 &1115644012 stripped
@@ -2663,9 +2667,9 @@ RectTransform:
   - {fileID: 2142114155}
   - {fileID: 1830255192}
   - {fileID: 1036431312}
+  - {fileID: 1271226693}
   - {fileID: 1343114372}
   - {fileID: 1592627359}
-  - {fileID: 1271226693}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2686,6 +2690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::player_stats
   Box:
+    clovolist: []
     score: 0
     dialogue: 0
     atnosh: 0
@@ -2701,6 +2706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8b86bc4085a19245aa67619435f7d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpgrateDataManager
+  exemp: {fileID: 0}
 --- !u!114 &1247413216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2749,10 +2755,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1247413213}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.3843994, y: 0}
-  m_SizeDelta: {x: 558.5635, y: 0}
+  m_AnchorMin: {x: 0.24340744, y: 0.28229824}
+  m_AnchorMax: {x: 0.7605186, y: 0.7178072}
+  m_AnchoredPosition: {x: -0.115600586, y: 0}
+  m_SizeDelta: {x: -0.43652344, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1271226694
 MonoBehaviour:
@@ -2860,9 +2866,9 @@ RectTransform:
   m_Father: {fileID: 1343114372}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1300632459
 MonoBehaviour:
@@ -3044,7 +3050,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1343114372
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3134,6 +3140,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1343114371}
   m_CullTransparentMesh: 1
+--- !u!1 &1356549019 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7718926094067601138, guid: 69d1f04d6e69a66439a34f16cfedc8f3, type: 3}
+  m_PrefabInstance: {fileID: 525973761}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1356549020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356549019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe5feed01d1b1f9438097f0a0d9367c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VAUpgrate
+  data:
+    kolichestvo: 0
+  basePrice: 5000
+  multiplier: 1
 --- !u!1001 &1592627358
 PrefabInstance:
   m_ObjectHideFlags: 0
