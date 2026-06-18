@@ -1994,8 +1994,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e1f72c350db2a34b8543dba71543d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BackgroundMusic
-  musicClip: {fileID: 8300000, guid: b50d0f25dec5d6d47bb52c674d07d1ae, type: 3}
-  volume: 0.24
+  musicClip: {fileID: 8300000, guid: 50da85a179107d440922477b9a23995a, type: 3}
+  volume: 0.09
   playOnStart: 1
 --- !u!1 &1036431311
 GameObject:
