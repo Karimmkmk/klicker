@@ -38,7 +38,10 @@ public class UpgrateDataManager : MonoBehaviour
     }
     private void ConvertorCL()
     {
-        exemp.Box.clovolist.Clear();
+        if (clovar.Count > 0)
+        {
+            exemp.Box.clovolist.Clear();
+        }
         foreach (KeyValuePair<string, DataUpgrade> aktyal in clovar)
         {
             exemp.Box.clovolist.Add(new DataUpgradePair(aktyal.Key, aktyal.Value));

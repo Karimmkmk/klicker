@@ -22,6 +22,7 @@ public abstract class AbstractUpgrade : MonoBehaviour
     [SerializeField] protected DataUpgrade data = new DataUpgrade_default();
     [SerializeField] protected uint basePrice;
     [SerializeField] protected float multiplier = 1;
+    protected ButtonSystem buttonSystem;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Regist()
     {
@@ -29,6 +30,7 @@ public abstract class AbstractUpgrade : MonoBehaviour
     }
     void Start()
     {
+        buttonSystem = GameObject.Find("Click_Button").GetComponent<ButtonSystem>();
         manager = GameObject.Find("Canvas").GetComponent<UpgrateDataManager>();
         exemp = GameObject.Find("Canvas").GetComponent<player_stats>();
         Title = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
@@ -55,7 +57,7 @@ public abstract class AbstractUpgrade : MonoBehaviour
     {
         return (uint)(multiplier * (basePrice * (data.kolichestvo + 1)));
     }
-    public abstract void click_action();
+    public abstract void buy_action();
     private void CA_ative()
     {
         if (exemp.Box.score < ToPrice())
@@ -64,6 +66,6 @@ public abstract class AbstractUpgrade : MonoBehaviour
         }
         exemp.Box.score -= ToPrice();
         data.kolichestvo += 1;
-        click_action();
+        buy_action();
     }
 }

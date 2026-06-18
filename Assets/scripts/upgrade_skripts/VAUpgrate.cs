@@ -8,7 +8,7 @@ public class VAUpgrate : AbstractUpgrade
         Title.text = "автокликер";
         basePrice = 5000;
     }
-    public override void click_action()
+    public override void buy_action()
     {
 
     }
