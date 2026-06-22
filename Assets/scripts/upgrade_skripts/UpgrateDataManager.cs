@@ -24,7 +24,7 @@ public class UpgrateDataManager : MonoBehaviour
         return null;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         exemp = GameObject.Find("Canvas").GetComponent<player_stats>();
         exemp.PostLoad += ConvertorLC;

@@ -26,6 +26,7 @@ public abstract class AbstractUpgrade : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Regist()
     {
+        // try get data
         manager.AddData(this.GetType().Name, data);
     }
     void Start()
