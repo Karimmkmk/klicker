@@ -10,4 +10,8 @@ public class ButtonSystem : MonoBehaviour
         explorer.Box.score += 1;
         OnClick?.Invoke();
     }
+    public void InvokeEvent()
+    {
+        OnClick?.Invoke();
+    }
 }

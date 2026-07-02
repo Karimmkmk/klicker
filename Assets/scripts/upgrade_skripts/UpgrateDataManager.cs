@@ -5,6 +5,8 @@ public class UpgrateDataManager : MonoBehaviour
 {
     public player_stats exemp;
     Dictionary<string, DataUpgrade> clovar = new Dictionary<string, DataUpgrade>();
+    public delegate void MYD();
+    public event MYD OnGetData;
     public void AddData(string key, DataUpgrade infa)
     {
         if (clovar.ContainsKey(key))
@@ -46,6 +48,7 @@ public class UpgrateDataManager : MonoBehaviour
         {
             exemp.Box.clovolist.Add(new DataUpgradePair(aktyal.Key, aktyal.Value));
         }
+
     }
     private void ConvertorLC()
     {
@@ -60,5 +63,6 @@ public class UpgrateDataManager : MonoBehaviour
                 AddData(aktyal._key, aktyal._dataUpgrade);
             }
         }
+        OnGetData?.Invoke();
     }
 }
