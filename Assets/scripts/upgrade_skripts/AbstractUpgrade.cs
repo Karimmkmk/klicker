@@ -26,10 +26,14 @@ public abstract class AbstractUpgrade : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Regist()
     {
-        data = manager.GetData(this.GetType().Name);
-        if (data == null)
+        DataUpgrade temp = manager.GetData(this.GetType().Name);
+        if (temp == null)
         {
             manager.AddData(this.GetType().Name, data);
+        }
+        else
+        {
+            data = temp; 
         }
     }
     void Start()
@@ -44,6 +48,7 @@ public abstract class AbstractUpgrade : MonoBehaviour
         Start02();
         linkbutton();
     }
+    protected abstract void Update2();
     protected abstract void Start02();
     private void linkbutton()
     {
@@ -56,6 +61,7 @@ public abstract class AbstractUpgrade : MonoBehaviour
     {
         uint bla = ToPrice();
         price.text = bla.ToString();
+        Update2();
     }
     public uint ToPrice()
     {

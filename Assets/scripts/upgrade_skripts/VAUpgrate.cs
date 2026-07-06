@@ -17,10 +17,13 @@ public class VAUpgrate : AbstractUpgrade
     {
 
     }
-    public void Update()
+    protected override void Update2()
     {
         if (is_active)
+        {
+            exemp.Box.score += 1;
             buttonSystem.InvokeEvent();
+        }
 
     }
     public void IsActiveTrue()

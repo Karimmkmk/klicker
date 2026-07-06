@@ -3,7 +3,10 @@ using UnityEngine;
 public class clickUpgrate : AbstractUpgrade
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    
+    protected override void Update2()
+    {
+        
+    }
     protected override void Start02()
     {
         buttonSystem.OnClick += onclick;
