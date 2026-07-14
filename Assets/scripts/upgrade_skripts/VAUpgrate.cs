@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,7 @@ public class VAUpgrate : AbstractUpgrade
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private bool is_active;
     public Button button_upgrate;
+    public GameObject autoclick;
     protected override void Start02()
     {
         button_upgrate.onClick.AddListener(IsActiveTrue);
@@ -15,7 +17,7 @@ public class VAUpgrate : AbstractUpgrade
     }
     public override void buy_action()
     {
-
+        
     }
     protected override void Update2()
     {
@@ -23,6 +25,18 @@ public class VAUpgrate : AbstractUpgrade
         {
             exemp.Box.score += 1;
             buttonSystem.InvokeEvent();
+        }
+        if (data.kolichestvo < 1)
+        {
+            autoclick.SetActive(false);
+        }
+        else if (is_active == true)
+        {
+            autoclick.SetActive(false);
+        }
+        else if (data.kolichestvo > 1 && is_active == false)
+        {
+            autoclick.SetActive(true);
         }
 
     }

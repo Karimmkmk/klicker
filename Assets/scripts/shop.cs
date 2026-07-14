@@ -7,7 +7,7 @@ public class shop : MonoBehaviour
     public GameObject ObjectShop;
     private void Awake()
     {
-        StartCoroutine(sshop());
+        //StartCoroutine(sshop());
     }
     IEnumerator sshop()
     {
