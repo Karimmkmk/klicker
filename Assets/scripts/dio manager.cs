@@ -26,4 +26,13 @@ public class diomanager : MonoBehaviour
         player_Stats.Box.dialogue = 1;
         }
     }
+   public void dio2()
+    {
+        //if ()
+        {
+            NPCConversation npc = boxbox.GetChild(0).GetComponent<NPCConversation>();
+            explorer.StartConversation(npc);
+            player_Stats.Box.dialogue = 1;
+        }
+    }
 }
